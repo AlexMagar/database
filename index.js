@@ -19,6 +19,28 @@ const fruit = new Fruit({
     review: "Pretty good fruit"
 });
 
+// Fruit.inserOne(fruit, function(err){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("Sucessful")
+//     }
+// });
+
+//
+Fruit.find(function(err, fruits){
+    if(err){
+        console.log(err);
+    }else{
+
+        mongoose.connection.close();
+
+        fruits.forEach(function(fruit){
+            console.log(fruit.name);
+        });
+    }
+});
+
 //fruit.save();
 
 const findDocuments = function(db, callback){
