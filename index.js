@@ -80,3 +80,21 @@ const person = new Person({
 });
 
 person.save();
+
+//update mthod
+Fruit.updateOne({_id: "...."}, {name:"Ram"}, function(err){
+    if(err){
+        console.log(err);
+    }else{
+        console.log("Successfully Updated");
+    }
+});
+
+//delete method
+Fruit.deleteOne({name:"Ram"}, function(err){
+    if(err){
+        console.log(err);
+    }else{
+        console.log("Sucessfully Deleted");
+    }
+});
